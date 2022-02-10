@@ -5,7 +5,7 @@ const port = 3000;
 
 const server = http.createServer((req, res) => {
   var cadenaConexionPublica = process.env.PUBLIC_STRING_CONN;
-  var cadenaConexionPrivada = process.env.PRIVATE_STRING_CONN;
+  var cadenaConexionPrivada = process.env.PATH;
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
   res.end(`IP Privada: ${cadenaConexionPrivada} \nIP Publica: ${cadenaConexionPublica} \n`);
