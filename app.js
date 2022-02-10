@@ -4,6 +4,8 @@ const hostname = 'localhost';
 const port = 3000;
 
 const server = http.createServer((req, res) => {
+  console.log(process.env.PUBLIC_STRING_CONN);
+  console.log(process.env.PRIVATE_STRING_CONN);
   var cadenaConexionPublica = process.env.PUBLIC_STRING_CONN;
   var cadenaConexionPrivada = process.env.PATH;
   res.statusCode = 200;
