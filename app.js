@@ -4,9 +4,11 @@ const hostname = 'localhost';
 const port = 3000;
 
 const server = http.createServer((req, res) => {
+  var cadenaConexionPublica = process.env.PUBLIC_STRING_CONN;
+  var cadenaConexionPrivada = process.env.PRIVATE_STRING_CONN;
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  res.end('IP Privada: mongodb://mongoadmin:8Tj38d9BFhqDhy3x@3.133.124.221:27017/?authSource=admin \n IP Publica: mongodb://mongoadmin:8Tj38d9BFhqDhy3x@3.133.124.221:27017/?authSource=admin \n');
+  res.end(`IP Privada: ${cadenaConexionPrivada} \nIP Publica: ${cadenaConexionPublica} \n`);
 });
 
 server.listen(port, hostname, () => {
